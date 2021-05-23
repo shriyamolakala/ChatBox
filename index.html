@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="mystyle.css">
+        <meta charset = "utf-8">
+        <meta name="viewport" content = "width=device-width, initial-scale=1">
+        <title>My First Website</title>
+        
+    </head>
+    
+    <script>
+        
+     function myFunction()
+     {
+        var person=prompt("Please enter your name");
+        
+        if (person != "")
+        {
+            var personMessage=prompt("Hi " + person + ", how are you today?");
+         }
+        else {
+            var personMessage=prompt("Hi, how are you today?");
+         }
+            if(personMessage.includes("you") || personMessage.includes("u")) {
+                   alert("I am doing great, thank you for asking!");
+            }
+            
+            personMessage.toLowerCase();
+            var check = true;
+             var negWords = ["terrible", "bad", "okay", "sad", "lazy", "worthless", "ugly", "failure", "not"];
+             var count = 0;
+        
+             while(check) {
+                 if(personMessage.includes(negWords[count])) {
+                    
+                     if (negWords[count] == "bad" || negWords[count] == "terrible" || negWords[count] == "sad") {
+                         var personMessage= prompt("Why are you feeling " + negWords[count] + "?");
+                         var personMessage= prompt("I'm sorry to hear that, is there anything you can do to feel better?");
+                         alert("Don't give up! You can do this!");
+                         
+                     } else if (negWords[count] == "lazy" || negWords[count] == "worthless" || negWords[count] == "ugly") {
+                         var personMessage= prompt("Why do you feel " + negWords[count] + "?");
+                         var personMessage= prompt("I'm sorry to hear that, is there anything you can do to feel better?");
+                         alert("Don't give up! You can do this!");
+                         
+                     } else if (negWords[count] == "failure") {
+                         var personMessage= prompt("Why do you feel like a failure?");
+                         var personMessage= prompt("I'm sorry to hear that, is there anything you can do to feel better?");
+                         alert("Don't give up! You can do this!");
+                         
+                     
+                     } else {
+                         var personMessage= prompt("Why do you feel that way?");
+                         var personMessage= prompt("I'm sorry to hear that, is there anything you can do to feel better?");
+                         
+                         alert("Don't give up! You can do this!");
+                     }
+                     check = true;
+                   
+                 }
+                 else {
+                     count++;
+                     if(count === negWords.length) {
+                    check = false;
+                    break;
+                     
+                     }
+                 }
+            }
+
+             check = true;
+             count = 0;
+             var posWords = ["great", "good", "wonderful", "happy", "better", "fine", "amazing", "super", "superb"];
+       
+           
+             while(check) {
+                 if(personMessage.includes(posWords[count])) {
+                    
+                     if(posWords[count] == "great" || posWords[count] == "good" || posWords[count] == "wonderful" || posWords[count] == "fine" || posWords[count] == "amazing" || posWords[count] == "super" || posWords[count] == "superb") {
+                             alert("That's wonderful, I'm glad to hear you are doing " + posWords[count] + "!" );
+                             var personMessage=prompt("Is there anything else you would like to say?");
+                             if(personMessage == "bad" || personMessage == "not") {
+                                 var personMessage=prompt("I'm so sorry to hear that");
+                             } else if(personMessage == "no") {
+                                 alert("Have a nice day!");
+                             }
+                             alert("Keep up the positivity!");
+                             
+                     } else if(posWords[count] == "happy") {
+                             alert("That's wonderful, I'm glad you are " + posWords[count] + "!");
+                             var personMessage= prompt("Is there anything else you would like to say?");
+                             if(personMessage == "bad" || personMessage == "not") {
+                                 var personMessage=prompt("I'm so sorry to hear that");
+                             } else if(personMessage == "no") {
+                                 alert("Have a nice day!");
+                             }
+                             alert("Keep up the positivity!");
+                             
+                     } else if(posWords[count] ==  "better") {
+                             alert("That's wonderful, I'm glad you have been feeling " + posWords[count] + "!");
+                             var personMessage= prompt("Is there anything else you would like to say?");
+                             if(personMessage == "bad" || personMessage == "not") {
+                                 var personMessage=prompt("I'm so sorry to hear that");
+                             } else if(personMessage == "no") {
+                                 alert("Have a nice day!");
+                             }
+                             alert("Keep up the positivity!");
+                             
+                     }else {
+                             alert("That's wonderful, I'm glad to hear that!");
+                             var personMessage= prompt("Is there anything else you would like to say?");
+                             if(personMessage == "bad" || personMessage == "not") {
+                                 var personMessage=prompt("I'm so sorry to hear that");
+                             } else if(personMessage == "no") {
+                                 alert("Have a nice day!");
+                             }
+                             alert("Keep up the positivity!");
+                     }
+
+                     check = false;
+                     
+                 }
+                 else {
+                     count++;
+                     if(count == posWords.length) {
+                        check = false;
+                        break;
+                     }
+                 }
+            }
+     }
+    
+    function endMessage() {
+        document.write("Thank you for visiting the Interactive Chat Website").innerHTML;
+    }
+
+    </script>
+    
+    <body style="background-image: url('IMG_7573.jpg');">
+ 
+        <h1>
+            <center>Hello, Welcome to the ChatBox</center>
+            
+        </h1>
+        <center>This website is completely anonymous and confidential.</center>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        
+        <h3>
+            <div>
+        <p> <center>  Click the button to start having a conversation! </p>
+         <button  onclick="myFunction()">Press me  </button> </center>
+               <p id="demo"></p>
+               
+               </div>
+        </h3>
+               
+        
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+    <center> <A HREF="index_two.html"><button  onclick="endMessage()">Finished</button> </A></center>
+    
+    </body>
+    
+</html>
